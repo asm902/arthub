@@ -5,6 +5,16 @@
   margin-top: 50px;
   padding: 20px;
 }
+
+.cards a:link {
+  color: black;
+}
+
+.cards a:hover {
+  color: #800080;
+  text-decoration: none
+
+}
 // Smallest device
 @media (min-width: 100px) and (max-width: 575px) {
   .cards {
