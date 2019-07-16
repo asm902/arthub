@@ -1,5 +1,4 @@
-
-<h1>Explore our paintings:</h1>
+<h3 class="index-title">Explore our paintings:</h3>
 
 <div class="cards">
   <% @paintings.each do |painting| %>
@@ -8,9 +7,9 @@
     <div class="painting-card-infos">
       <div>
         <h3><%=link_to painting.name, painting_path(painting) %></h3>
-        <p>painting.year</p>
+        <p><%=painting.year%></p>
       </div>
-       <h2 class="painting-pricing"><%=painting.price %></h2>
+       <h2 class="painting-pricing">$<%=painting.price %></h2>
     </div>
   </div>
   <% end %>
