@@ -1,0 +1,18 @@
+<h3 class="index-title">Explore our paintings:</h3>
+
+<div class="cards">
+  <% @paintings.each do |painting| %>
+    <%= link_to painting_path(painting) do %>
+      <div class="painting-card">
+        <img src="<%=painting.photo%>" >
+        <div class="painting-card-infos">
+          <div>
+            <h3><%=painting.name%></h3>
+            <p><%=painting.year%></p>
+          </div>
+           <h2 class="painting-pricing">$<%=painting.price %></h2>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+</div>

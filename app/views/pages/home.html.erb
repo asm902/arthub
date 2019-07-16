@@ -5,3 +5,8 @@
     <a class="btn btn-flat" href="#">Apply now</a>
   </div>
 </div>
+
+<div class="index">
+  <% @paintings = Painting.all %>
+  <%= render "paintings/index" %>
+</div>
