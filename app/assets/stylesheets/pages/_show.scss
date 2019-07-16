@@ -31,7 +31,7 @@ p {
 .show-card h3 {
   font-size: 18px;
   font-weight: bold;
-  margin: 0;
+  margin-bottom: 10px;
   opacity: .7;
   padding-top: 0;
 }
@@ -40,6 +40,7 @@ p {
   font-size: 16px;
   opacity: .7;
   margin: 0;
+  padding: 0;
 }
 
 .show-card-details {
@@ -50,18 +51,29 @@ p {
 
 .user-avatar {
   position: absolute;
+  top: 20px;
+  right: 20px;
 }
 
 .user-avatar p {
   font-size: 12px;
 }
 
-.booking-form .btn {
-  background-color: #800000;
-}
-
 .booking-form {
   border: 1px #e6e7e8 solid;
+  width: 60%;
+  margin: 0;
+  padding: 0;
+}
+
+.booking-form form {
+  width: 100%;
+}
+
+.booking-form .btn {
+  background-color: #800080;
+  border-color: #800080;
+  margin-top: 20px;
 }
 
 
