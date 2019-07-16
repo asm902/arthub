@@ -1,5 +1,5 @@
 class PaintingsController < ApplicationController
-  skip_before_action :authenticate_user!, :only => [:index, :new, :create]
+  skip_before_action :authenticate_user!, only: [:index]
   def index
     @paintings = Painting.all
   end
@@ -10,7 +10,8 @@ class PaintingsController < ApplicationController
 
   def create
     @painting = Painting.new(painting_params)
-    if @painting.save
+    @painting.user = current_user
+    if @painting.save!
       redirect_to root_path
     else
       render :new
@@ -20,6 +21,6 @@ class PaintingsController < ApplicationController
   private
 
   def painting_params
-    params.require(:paintings).permit(:name, :description, :year, :style, :available, :price, :photo)
+    params.require(:painting).permit(:name, :description, :artist, :year, :style, :available, :price, :photo, :user)
   end
 end

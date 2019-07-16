@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_15_145728) do
+ActiveRecord::Schema.define(version: 2019_07_15_215101) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,7 +30,7 @@ ActiveRecord::Schema.define(version: 2019_07_15_145728) do
   create_table "paintings", force: :cascade do |t|
     t.string "name"
     t.text "description"
-    t.date "year"
+    t.string "year"
     t.integer "price"
     t.boolean "available"
     t.string "style"
@@ -38,6 +38,7 @@ ActiveRecord::Schema.define(version: 2019_07_15_145728) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "photo"
+    t.string "artist"
     t.index ["user_id"], name: "index_paintings_on_user_id"
   end
 

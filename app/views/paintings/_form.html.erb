@@ -1,9 +1,10 @@
 <%= simple_form_for (@painting) do |f| %>
   <%= f.input :name %>
   <%= f.input :description %>
+  <%= f.input :artist %>
   <%= f.input :year %>
   <%= f.input :price %>
-  <%= f.input :style %>
+  <%= f.input :style, collection: ["Nature", "Abstract", "Nude", "Impressionism", "Cubism"] %>
   <%= f.input :available %>
   <%= f.input :photo %>
   <%= f.input :photo_cache, as: :hidden %>
