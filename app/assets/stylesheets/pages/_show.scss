@@ -1,0 +1,79 @@
+p {
+  padding-left: 20px;
+}
+.show-container {
+  padding: 20px
+}
+
+.image-container {
+  overflow: hidden;
+  background: white;
+  // box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  // border-radius: 7px;
+  width: 100%;
+  display: block;
+  justify-content: center;
+  position: relative;
+  padding: 10px 10px 10px 10px
+}
+
+.image-container img {
+  width: 100%;
+}
+
+// .show-card > img {
+//   height: 400px;
+//   width: 100%;
+//   overflow: hidden;
+//   object-fit: cover;
+// }
+
+.show-card h3 {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  opacity: .7;
+  padding-top: 0;
+}
+
+.show-card p {
+  font-size: 16px;
+  opacity: .7;
+  margin: 0;
+  padding: 0;
+}
+
+.show-card-details {
+  padding: 16px;
+  display: block;
+  position: relative;
+}
+
+.user-avatar {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+.user-avatar p {
+  font-size: 12px;
+}
+
+.booking-form {
+  border: 1px #e6e7e8 solid;
+  width: 60%;
+  margin: 0;
+  padding: 0;
+}
+
+.booking-form form {
+  width: 100%;
+}
+
+.booking-form .btn {
+  background-color: #800080;
+  border-color: #800080;
+  margin-top: 20px;
+}
+
+

@@ -6,4 +6,5 @@ class User < ApplicationRecord
   has_many :owned_paintings, class_name: "Paintings"
   has_many :bookings
   has_many :booked_paintings, through: :bookings, source: :painting
+  mount_uploader :photo, PhotoUploader
 end

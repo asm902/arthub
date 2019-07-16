@@ -1,0 +1,35 @@
+<h3 class="index-title"><%= @painting.name%></h3>
+<p>By <%= @painting.artist %></p>
+
+<div class=" show-container row justify-content-around">
+
+  <div class="image-container col-sm-12 col-lg-6">
+
+      <%= cl_image_tag @painting.photo, crop: :limit%>
+
+  </div>
+
+  <div class=" show-card col-sm-12 col-lg-6">
+
+        <div class=" user-avatar d-inline-flex flex-column align-items-center">
+          <%= image_tag "https://res.cloudinary.com/dtybbw7rx/image/upload/v1563288043/blank-profile-picture-973460_960_720_ws4cua.png", class: "avatar" %>
+          <p><%= @painting.user.first_name%> <%=@painting.user.last_name%> </p>
+        </div>
+
+        <div class="show-card-details">
+          <h3> Details of this painting:</h3>
+          <p> <strong>Year: </strong><%= @painting.year %> </p>
+          <p> <strong>Style: </strong><%= @painting.style %> </p>
+          <p> <strong>Description: </strong><%= @painting.description %> </p>
+        </div>
+
+        <div class="booking-form d-flex justify-content-around">
+        <%= simple_form_for([@painting, @booking]) do |f| %>
+          <%= f.input :start_date, as: :string, required: false, input_html: {id: "range_start"} %>
+          <%= f.input :end_date, as: :string, required: false, input_html: {id: "range_end"} %>
+          <%= f.submit "Book", class: "btn btn-primary" %>
+        <% end %>
+        </div>
+  </div>
+
+</div>

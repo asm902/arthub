@@ -4,6 +4,11 @@ class PaintingsController < ApplicationController
     @paintings = Painting.all
   end
 
+  def show
+    @painting = Painting.find(params[:id])
+    @booking = Booking.new
+  end
+
   def new
     @painting = Painting.new
   end
@@ -18,9 +23,27 @@ class PaintingsController < ApplicationController
     end
   end
 
+  def edit
+    @painting = Painting.find(params[:id])
+  end
+
+  def update
+    @painting = Painting.find(params[:id])
+    @painting.update(painting_params)
+    if @painting.save!
+      redirect_to painting_path(@painting)
+    else
+      render :edit
+    end
+  end
+
   private
 
+  def set_painting
+    @painting = Painting.find(params[:id])
+  end
+
   def painting_params
-    params.require(:painting).permit(:name, :description, :artist, :year, :style, :available, :price, :photo, :user)
+    params.require(:painting).permit(:name, :description, :artist, :year, :style, :available, :price, :photo)
   end
 end
