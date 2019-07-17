@@ -109,8 +109,14 @@ p {
   margin: 20px 10px 10px 10px;
   color: white;
   width: 95%;
+  border-radius: 5px;
 }
+
+.booking-form .btn:hover {
+  font-size: bold;
+  text-decoration: underline;
+}
+
 .input-booking-form {
   margin: 10px;
 }
-
