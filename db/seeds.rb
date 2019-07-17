@@ -31,6 +31,7 @@ painting1 = Painting.new(name: "Red Yellow Blue",
   artist: "Wassily Kandinsky",
   available: false,
   style: 'Abstract',
+  location: 'London',
   user: user1)
 painting1.remote_photo_url = "https://res.cloudinary.com/dtybbw7rx/image/upload/v1563202483/v5chpr5urbu451ucyimz.jpg"
 painting1.save!
@@ -42,6 +43,7 @@ painting2 = Painting.new(name: "Roses Bloom",
   artist: "Milena Gomez",
   available: true,
   style: 'Nature',
+  location: 'Chicago',
   user: user2)
 painting2.remote_photo_url = 'https://res.cloudinary.com/dtybbw7rx/image/upload/v1563208305/roses_bloom_q3k4cb.jpg'
 painting2.save!
@@ -53,6 +55,7 @@ painting3 = Painting.new(name: "El abrazo",
   artist: "Alicia Ngomo",
   available: false,
   style: 'Nude',
+  location: 'Madrid',
   user: user3)
 painting3.remote_photo_url = "https://res.cloudinary.com/dtybbw7rx/image/upload/v1563211595/El_abrazo_j6r3jn.jpg"
 painting3.save!
@@ -64,6 +67,7 @@ painting4 = Painting.new(name: "Yellow",
   artist: "Jerry McGuire",
   available: false,
   style: 'Abstract',
+  location: 'London',
   user: user1)
 painting4.remote_photo_url = "https://res.cloudinary.com/dtybbw7rx/image/upload/v1563208306/yellow_zzbcsi.jpg"
 painting4.save!
@@ -75,6 +79,7 @@ painting5 = Painting.new(name: "Rainbox",
   artist: "Jack Reacher",
   available: false,
   style: 'Abstract',
+  location: 'New York',
   user: user2)
 painting5.remote_photo_url = "https://res.cloudinary.com/dtybbw7rx/image/upload/v1563208305/rainbow_u2b83u.jpg"
 painting5.save!
