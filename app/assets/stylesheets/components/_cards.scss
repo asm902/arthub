@@ -10,10 +10,14 @@
   color: black;
 }
 
+.cards a:visited {
+  color: black;
+  text-decoration: none;
+}
+
 .cards a:hover {
   color: #800080;
-  text-decoration: none
-
+  text-decoration: none;
 }
 // Smallest device
 @media (min-width: 100px) and (max-width: 575px) {
