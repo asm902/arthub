@@ -1,1 +1,40 @@
-.
+.price-container {
+
+}
+
+.total_price {
+  border: 1px #cdced1 solid;
+  width: 80%;
+  margin: 0;
+  padding: 0;
+}
+
+.total_price h3 {
+  margin: 0;
+  padding: 20px 20px 0px 20px;
+}
+
+.total_price p {
+  margin: 0;
+  padding: 0px 20px 0px 20px;
+}
+
+.total_price  button {
+  background-color: #800080;
+  border-color: #800080;
+  margin: 20px 10px 10px 10px;
+  color: white;
+  width: 95%;
+}
+
+.total_price  button a {
+  color: white;
+  text-decoration: none;
+  }
+
+
+.total_price  button a:hover {
+  color: white;
+  text-decoration: underline;
+  }
+
