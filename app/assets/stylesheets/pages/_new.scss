@@ -19,7 +19,7 @@
   padding: 0px 20px 0px 20px;
 }
 
-.total_price  button {
+.total_price  .btn {
   background-color: #800080;
   border-color: #800080;
   margin: 20px 10px 10px 10px;
@@ -27,13 +27,13 @@
   width: 95%;
 }
 
-.total_price  button a {
+.total_price  .btn {
   color: white;
   text-decoration: none;
   }
 
 
-.total_price  button a:hover {
+.total_price  .btn:hover {
   color: white;
   text-decoration: underline;
   }

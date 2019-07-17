@@ -44,7 +44,7 @@
               <%= simple_form_for [@painting, @booking] do |f| %>
                 <%= f.input :start_date, as: :hidden, input_html: { value: @start_date } %>
                 <%= f.input :end_date, as: :hidden, input_html: { value: @end_date } %>
-                <%= f.submit "Book Painting" %>
+                <%= f.submit "Book Painting", class: "btn btn-primary" %>
               <% end %>
 
               <!-- <button onclick="bookingAlert()"><%#= link_to "Book painting", painting_path(@painting)%></button>
