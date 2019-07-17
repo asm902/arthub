@@ -1,12 +1,13 @@
 class PaintingsController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:index]
+  skip_before_action :authenticate_user!, only: [:index, :show]
   def index
     @paintings = Painting.all
+
+
   end
 
   def show
     @painting = Painting.find(params[:id])
-    @booking = Booking.new
   end
 
   def new
@@ -35,6 +36,11 @@ class PaintingsController < ApplicationController
     else
       render :edit
     end
+  end
+
+  def destroy
+    @painting = Painting.find(params[:id])
+    @painting.destroy
   end
 
   private
