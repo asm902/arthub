@@ -3,7 +3,7 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Log in</h5>
+        <h4 class="modal-title" id="exampleModalLabel">Log in</h4>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -23,15 +23,17 @@
           <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
         </div>
 
-        <button type="submit" class="btn btn-primary">Sign in!</button>
+        <button type="submit" class="btn btn-outline-primary">Log in!</button>
         <% end %>
       </div>
   <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+        <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button> -->
         <!-- <a data-dismiss="modal" data-toggle="modal" href="#lost">Click</a> -->
         <!-- <button type="button" class="btn btn-primary">Not a Member?</button> -->
-        <%= link_to "Not a Member?", new_user_registration_path, class: "btn btn-primary"  %>
 
+        <%= link_to new_user_registration_path do %>
+          <button type="submit" class="btn btn-secondary">Not a Member?</button>
+        <% end %>
       </div>
 
 

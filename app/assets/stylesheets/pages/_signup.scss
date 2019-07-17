@@ -1,7 +1,22 @@
 #signupform .form-group {
-  padding-top: 20px;
+  padding-top: 10px;
  }
 
-#signupform button {
-  margin-top: 10px;
+// #signupform button {
+//   margin-top: 5px;
+//   background-color: #800080;
+//   border-color: #800080;
+
+
+.modal-header {
+  color: #800080;
 }
+
+
+// .btn-outline-primary {
+//   // background-color: #800080;
+//   // border-color: #800080;
+//   // color: white;
+//   @include button-outline-variant(#800080);
+//   margin-top: 8px;
+// }
