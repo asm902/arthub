@@ -2,3 +2,13 @@
 .index {
 
 }
+
+// #home-search-button {
+//   @include button-outline-variant(#800080);
+// }
+
+
+
+.btn-outline-success {
+   @include button-outline-variant(#800080);
+}
