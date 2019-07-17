@@ -43,8 +43,8 @@
               <p>Add dates for prices</p>
               <form action="/paintings/<%= @painting.id %>/bookings/new" method="get">
                 <div class="inputs d-flex justify-content-around">
-                <input type="text" name="start_date" id="range_start" class="form-control">
-                <input type="text" name="end_date" id="range_end" class="form-control">
+                <input type="text" name="start_date" id="range_start" class="form-control input-booking-form" ">
+                <input type="text" name="end_date" id="range_end" class="form-control input-booking-form">
                 </div>
                 <input type="submit" value="Add dates" class="btn btn-dates">
               </form>
