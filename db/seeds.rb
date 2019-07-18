@@ -10,20 +10,27 @@ Booking.destroy_all
 Painting.destroy_all
 User.destroy_all
 
-puts "Cleaning the database.."
+puts "Cleaning the database..."
+puts "Database clean. start seeding"
+
+puts "Creating Users"
 user1 = User.create!(first_name: "Jerry", last_name: "McGuire", email: "jerry@gmail.com", password: "123456", artist: true);
+puts "User 1 - Seeded ✅"
 user2 = User.create!(first_name: "Ana", last_name: "Lopez", email: "ana@gmail.com", password: "123456", artist: false);
+puts "User 2 - Seeded ✅"
 user3 = User.new(first_name: "Alicia", last_name: "Ngomo", email: "alicia@gmail.com", password: "123456", artist: true);
 user3.remote_photo_url = "https://res.cloudinary.com/dtybbw7rx/image/upload/v1563352869/IMG_3942_l3kzpu.jpg"
 user3.save!
+puts "User 3 - Seeded ✅"
 user4 = User.create!(first_name: "Jacob", last_name: "Morton", email: "jacob@gmail.com", password: "123456", artist: false);
+puts "User 4 - Seeded ✅"
 user5 = User.new(first_name: "Adam", last_name: "McCallister", email: "adam@gmail.com", password: "123456", artist: false);
 user5.remote_photo_url = "https://res.cloudinary.com/dtybbw7rx/image/upload/v1563300104/flbroa9wzsq3lduqhvhv.jpg"
 user5.save!
+puts "User 5 - Seeded ✅"
+puts "All Users - Seeded ✅"
 
-puts "Database clean. start seeding"
-
-
+puts "Creating Paintings/Artwork"
 painting1 = Painting.new(name: "Red Yellow Blue",
   description: "An abstract painting full of geometry",
   year: 1965,
@@ -114,7 +121,86 @@ painting7 = Painting.new(name: "Freshapple",
 painting7.remote_photo_url = "https://res.cloudinary.com/dtybbw7rx/image/upload/v1563475432/pineapple-supply-co-lq-8vB5m0DM-unsplash_eshikv.jpg"
 painting7.save!
 puts "Painting 7 - Freshapple - Seeded ✅"
+puts "Paintings/Artwork - Seeded ✅"
 
-puts "Congratulations, database succesfully seeded!"
+puts "Creating Bookings"
+booking1 = Booking.new(
+  user: user3,
+  painting: painting7,
+  confirmed: nil)
+booking1.save!
+puts "Booking 1 - Seeded ✅"
+
+booking2 = Booking.new(
+  user: user5,
+  painting: painting3,
+  confirmed: true)
+booking2.save!
+puts "Booking 2 - Seeded ✅"
+
+booking3 = Booking.new(
+  user: user3,
+  painting: painting2,
+  confirmed: false)
+booking3.save!
+puts "Booking 3 - Seeded ✅"
+
+booking4 = Booking.new(
+  user: user5,
+  painting: painting5,
+  confirmed: nil)
+booking4.save!
+puts "Booking 4 - Seeded ✅"
+
+booking5 = Booking.new(
+  user: user3,
+  painting: painting2,
+  confirmed: true)
+booking5.save!
+puts "Booking 5 - Seeded ✅"
+
+booking6 = Booking.new(
+  user: user5,
+  painting: painting4,
+  confirmed: false)
+booking6.save!
+puts "Booking 6 - Seeded ✅"
+
+booking7 = Booking.new(
+  user: user2,
+  painting: painting3,
+  confirmed: false)
+booking7.save!
+puts "Booking 7 - Seeded ✅"
+
+booking8 = Booking.new(
+  user: user4,
+  painting: painting6,
+  confirmed: false)
+booking8.save!
+puts "Booking 8 - Seeded ✅"
+
+booking9 = Booking.new(
+  user: user1,
+  painting: painting7,
+  confirmed: true)
+booking9.save!
+puts "Booking 9 - Seeded ✅"
+
+booking10 = Booking.new(
+  user: user4,
+  painting: painting3,
+  confirmed: nil)
+booking10.save!
+puts "Booking 10 - Seeded ✅"
+
+booking11 = Booking.new(
+  user: user1,
+  painting: painting3,
+  confirmed: nil)
+booking11.save!
+puts "Booking11 - Seeded ✅"
+
+puts "🥳 🎊 🎉 👯‍♂️ 👯‍♀️ Congratulations, database succesfully seeded! 👯‍♀️ 👯‍♂️ 🎉 🎊 🥳"
 
 
