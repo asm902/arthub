@@ -18,12 +18,12 @@
 
 <div class="index">
   <h3 class="index-title">Your Bookings:</h3>
-  <%= render "pages/index", user_paintings: current_user.booked_paintings %>
+  <%= render "pages/user_bookings", user_bookings: current_user.bookings %>
 </div>
 
 <div class="index">
-  <h3 class="index-title">To Confirm:</h3>
-  <%= render "pages/index", user_paintings: current_user.bookings.to_confirm %>
+  <!-- <h3 class="index-title">To Confirm:</h3> -->
+  <%#= render "pages/index", user_paintings: current_user.bookings.to_confirm %>
 </div>
 
 

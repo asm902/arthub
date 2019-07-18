@@ -21,7 +21,7 @@ user5 = User.new(first_name: "Adam", last_name: "McCallister", email: "adam@gmai
 user5.remote_photo_url = "https://res.cloudinary.com/dtybbw7rx/image/upload/v1563300104/flbroa9wzsq3lduqhvhv.jpg"
 user5.save!
 
-puts "database clean. start seeding"
+puts "Database clean. start seeding"
 
 
 painting1 = Painting.new(name: "Red Yellow Blue",
@@ -35,6 +35,7 @@ painting1 = Painting.new(name: "Red Yellow Blue",
   user: user1)
 painting1.remote_photo_url = "https://res.cloudinary.com/dtybbw7rx/image/upload/v1563202483/v5chpr5urbu451ucyimz.jpg"
 painting1.save!
+puts "Painting 1 - Red Yello Blue - Seeded ✅"
 
 painting2 = Painting.new(name: "Roses Bloom",
   description: "A realistic depiction of nature. Strong contrast and focused lighting",
@@ -47,6 +48,7 @@ painting2 = Painting.new(name: "Roses Bloom",
   user: user2)
 painting2.remote_photo_url = 'https://res.cloudinary.com/dtybbw7rx/image/upload/v1563208305/roses_bloom_q3k4cb.jpg'
 painting2.save!
+puts "Painting 2 - Roses Bloom - Seeded ✅"
 
 painting3 = Painting.new(name: "El abrazo",
   description: "Two people sharing a strong hug",
@@ -59,6 +61,7 @@ painting3 = Painting.new(name: "El abrazo",
   user: user3)
 painting3.remote_photo_url = "https://res.cloudinary.com/dtybbw7rx/image/upload/v1563211595/El_abrazo_j6r3jn.jpg"
 painting3.save!
+puts "Painting 3 - El abrazo - Seeded ✅"
 
 painting4 = Painting.new(name: "Yellow",
   description: "An abstract painting left to the imagination of the viewer",
@@ -71,6 +74,7 @@ painting4 = Painting.new(name: "Yellow",
   user: user1)
 painting4.remote_photo_url = "https://res.cloudinary.com/dtybbw7rx/image/upload/v1563208306/yellow_zzbcsi.jpg"
 painting4.save!
+puts "Painting 4 - Yellow - Seeded ✅"
 
 painting5 = Painting.new(name: "Rainbox",
   description: "An abstract painting full of geometry",
@@ -83,6 +87,34 @@ painting5 = Painting.new(name: "Rainbox",
   user: user2)
 painting5.remote_photo_url = "https://res.cloudinary.com/dtybbw7rx/image/upload/v1563208305/rainbow_u2b83u.jpg"
 painting5.save!
-puts "database succesfully seeded!"
+puts "Painting 5 - Rainbow - Seeded ✅"
+
+painting6 = Painting.new(name: "Chillapple",
+  description: "An abstract painting full of geometry",
+  year: 2015,
+  price: 99,
+  artist: "Pineapple Supply Company",
+  available: false,
+  style: 'Impressionism',
+  location: 'Miami',
+  user: user5)
+painting6.remote_photo_url = "https://res.cloudinary.com/dtybbw7rx/image/upload/v1563475421/pineapple-supply-co-zpkYWVAni30-unsplash_uemszq.jpg"
+painting6.save!
+puts "Painting 6 - Chillapple - Seeded ✅"
+
+painting7 = Painting.new(name: "Freshapple",
+  description: "An abstract painting full of geometry",
+  year: 2018,
+  price: 69,
+  artist: "Pineapple Supply Company",
+  available: false,
+  style: 'Impressionism',
+  location: 'Chicago',
+  user: user5)
+painting7.remote_photo_url = "https://res.cloudinary.com/dtybbw7rx/image/upload/v1563475432/pineapple-supply-co-lq-8vB5m0DM-unsplash_eshikv.jpg"
+painting7.save!
+puts "Painting 7 - Freshapple - Seeded ✅"
+
+puts "Congratulations, database succesfully seeded!"
 
 
