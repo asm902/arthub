@@ -33,7 +33,7 @@
         <% else %>
           <li class="nav-item">
             <!-- add Dahsboard Path -->
-            <%= link_to 'Dahsboard', root_path, :class => "nav-link"  %>
+            <%= link_to 'Dahsboard', dashboard_path, :class => "nav-link"  %>
           </li>
           <li class="nav-item">
             <%= link_to "Hello #{current_user.first_name}!", root_path, :class => "nav-link disabled" %>
@@ -50,7 +50,7 @@
               <% end %>
             </a>
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-              <%= link_to 'Profile', root_path, :class => "dropdown-item"  %>
+              <%= link_to 'Profile', dashboard_path, :class => "dropdown-item"  %>
               <div class="dropdown-divider"></div>
               <%= link_to "Sign out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
             </div>
