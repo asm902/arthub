@@ -1,0 +1,18 @@
+<div class="cards">
+    <% user_paintings.each do |painting| %>
+      <%= link_to painting_path(painting) do %>
+        <div class="painting-card">
+          <img src="<%=painting.photo%>" >
+          <div class="painting-card-infos">
+            <div>
+              <h3><%=painting.name%></h3>
+              <p><%=painting.year%></p>
+            </div>
+            <div class="painting-card-actions">
+              <%#= link_to "Confirm booking",  %>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
