@@ -1,0 +1,27 @@
+.btn-outline-success#home {
+    background-color: #800080;
+    color: #ffffff;
+    border-color: #800080;
+
+  &:hover {
+    background-color: transparent;
+    color: #ffffff;
+    border-color: #ffffff;
+  }
+}
+// .btn-outline-success#search
+  // These are the defaults
+   // @include button-outline-variant(#800080);
+   // @include button-outline-variant(#800080, darken(#ffffff, 100%));
+   // @include button-outline-variant(#800080, darken(#ffffff, 100%), darken(#000000, 100%), lighten(#ff0000,100%), lighten(#0000ff, 100%), darken(#00ff00, 100%));
+.btn-outline-success#noresults {
+    background-color: transparent;
+    color: #ffffff;
+    border-color: #ffffff;
+
+  &:hover {
+    background-color: #800080;
+    color: #ffffff;
+    border-color: #800080;
+  }
+}
