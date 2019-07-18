@@ -10,14 +10,12 @@
       <h3 ><%= @painting.name%></h3>
     <% end %>
   </div>
-  <p>By <%= @painting.artist %></p>
+  <p>By <%= @painting.artist%></p>
 
   <div class=" show-container row justify-content-around">
 
     <div class="image-container col-sm-12 col-lg-6">
-
         <%= cl_image_tag @painting.photo, crop: :limit%>
-
     </div>
 
     <div class=" show-card col-sm-12 col-lg-6">
@@ -30,26 +28,49 @@
           <div class="show-card-details">
             <h3> Details of this painting:</h3>
             <ul>
-            <li> <strong>Year: </strong><%= @painting.year %> </li>
-            <li> <strong>Style: </strong><%= @painting.style %> </li>
-            <li> <strong>Description: </strong><%= @painting.description %> </li>
-            <li> <strong>Price: </strong> $<%= @painting.price %> </li>
-            <li> <strong>Location: </strong> <%= @painting.location %> </li>
+              <li> <strong>Year: </strong><%= @painting.year %> </li>
+              <li> <strong>Style: </strong><%= @painting.style %> </li>
+              <li> <strong>Description: </strong><%= @painting.description %> </li>
+              <li> <strong>Price: </strong> $ <span class="painting_price"><%= @painting.price %></span></li>
+              <li> <strong>Location: </strong> <%= @painting.location %> </li>
             </ul>
           </div>
 
-          <div class="d-flex form-container justify-content-around">
-            <div class="booking-form">
-              <p>Add dates for prices</p>
-              <form action="/paintings/<%= @painting.id %>/bookings/new" method="get">
+          <div class="<%= current_user == @painting.user ? "price_container_invisible" : "price-container justify-content-around" %>">
+            <h3>Pricing</h3>
+            <form action="" method="get" class="dates_form">
                 <div class="inputs d-flex justify-content-around">
-                <input type="text" name="start_date" id="range_start" class="form-control input-booking-form">
-                <input type="text" name="end_date" id="range_end" class="form-control input-booking-form">
+                <input type="text" name="start_date" id="range_start" class="input-booking-form1 datepicker" placeholder="Enter start date">
+                <input type="text" name="end_date" id="range_end" class="input-booking-form2 datepicker" placeholder="Enter end date">
                 </div>
-                <input type="submit" value="Add dates" class="btn btn-dates">
+
+                <div class="price_wrapper d-flex justify-content-around">
+                  <div class="total_price_container">
+                    <div class="painting-pricing d-flex justify-content-between">
+                      <p>Price</p>
+                      <p id="price"></p>
+                    </div>
+                    <p id="calculation"></p>
+                    <div class="painting-fees d-flex justify-content-between">
+                      <p>Service Fee</p>
+                      <p id="fees"></p>
+                    </div>
+                    <div class="total-pricing d-flex justify-content-between">
+                      <p><strong>Total</strong></p>
+                      <p id="total_price"></p>
+                    </div>
+                  </div>
+                </div>
+
+                <input type="submit" value="Add dates" class="btn btn_dates btn-block">
               </form>
-            </div>
-          </div>
+
+              <%= simple_form_for [@painting, @booking] do |f| %>
+                <%= f.input :start_date, as: :hidden, input_html: { value: "hello", id: "booking_start"}%>
+                <%= f.input :end_date, as: :hidden, input_html: { value: "world", id: "booking_end"}%>
+                <%= f.submit "Book", class: "btn btn_book btn-block"%>
+              <% end %>
+        </div>
+       </div>
     </div>
-  </div>
 </div>

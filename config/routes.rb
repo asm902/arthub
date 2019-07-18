@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
 
   get "dashboard", to: 'pages#dashboard', as: "dashboard"
+  get "dashboard", to: 'bookings#confirm'
 
   root to: 'pages#home'
 
