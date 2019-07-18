@@ -14,6 +14,7 @@ const startDate = document.querySelector('#range_start');
 const endDate = document.querySelector('#range_end');
 
 const bookingPrice = () => {
+  datesButton.disabled = true;
   startDate.addEventListener('change', () => {
     datesButton.style.backgroundColor = "rgb(128,0,128)";
     datesButton.style.backgroundColorHover = "rgb(128,0,128)";
@@ -26,6 +27,7 @@ const bookingPrice = () => {
     datesButton.style.backgroundColorHover = "rgb(128,0,128)";
     datesButton.style.textDecorationHover = "underline";
     datesButton.style.borderColor = "rgb(128,0,128)";
+    datesButton.disabled = false;
   });
 
   datesButton.addEventListener('click', () => {

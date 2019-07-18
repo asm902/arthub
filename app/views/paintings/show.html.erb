@@ -21,7 +21,11 @@
     <div class=" show-card col-sm-12 col-lg-6">
 
           <div class=" user-avatar d-inline-flex flex-column align-items-center">
+            <% if current_user == @painting.user %>
+            <%= cl_image_tag @painting.user.photo, class: "avatar-bordered" %>
+            <% else %>
             <%= image_tag "https://res.cloudinary.com/dtybbw7rx/image/upload/v1563288043/blank-profile-picture-973460_960_720_ws4cua.png", class: "avatar-bordered" %>
+            <% end %>
             <p><%= @painting.user.first_name%> <%=@painting.user.last_name%> </p>
           </div>
 
