@@ -22,12 +22,20 @@
 </div>
 
 <div class="index">
-  <!-- <h3 class="index-title">To Confirm:</h3> -->
-  <%#= render "pages/index", user_paintings: current_user.bookings.to_confirm %>
+  <h3 class="index-title">To Confirm:</h3>
+  <%= render "pages/user_confirm", user_bookings_to_confirm: current_user.bookings_by_status(nil) %>
 </div>
 
+<div class="index">
+  <h3 class="index-title">Confirmed:</h3>
+  <%= render "pages/user_confirm", user_bookings_to_confirm: current_user.bookings_by_status(true) %>
+</div>
 
-<%# raise %>
+<div class="index">
+  <h3 class="index-title">Denied:</h3>
+  <%= render "pages/user_confirm", user_bookings_to_confirm: current_user.bookings_by_status(false) %>
+</div>
+
 <!-- display none -->
 <!-- three buttons -->
 <!-- event listener on three buttons for click -->
