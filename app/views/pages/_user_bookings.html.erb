@@ -1,0 +1,28 @@
+<%# raise %>
+<% if  %>
+  <div class="cards">
+      <% user_bookings.each do |booking| %>
+        <%= link_to painting_path(booking.painting) do %>
+          <div class="painting-card">
+            <img src="<%=booking.painting.photo%>" >
+            <div class="painting-card-infos">
+              <div>
+                <h3><%=booking.painting.name%></h3>
+                <p><%=booking.painting.year%></p>
+              </div>
+              <div class="painting-card-actions">
+                <% if booking.confirmed.nil? %>
+                  <%= "pending" %>
+                <% elsif booking.confirmed %>
+                  <%= "confirmed" %>
+                <% else %>
+                  <%= "Declined" %>
+                <% end %>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+<% end %>
+<%#= link_to "Confirm booking", painting_booking_path([painting, painting.]) %>

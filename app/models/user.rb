@@ -7,4 +7,16 @@ class User < ApplicationRecord
   has_many :bookings
   has_many :booked_paintings, through: :bookings, source: :painting
   mount_uploader :photo, PhotoUploader
+
+  def bookings_by_status(status)
+    owned_paintings = self.owned_paintings
+    bookings_by_others = []
+    owned_paintings.each do |painting|
+      Booking.where(painting_id: painting.id).each do |booking|
+        bookings_by_others << booking
+      end
+    end
+
+    bookings_by_others.select { |booking| booking.confirmed == status }
+  end
 end
