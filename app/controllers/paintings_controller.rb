@@ -1,6 +1,7 @@
 class PaintingsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
   def index
+    @paintings = Painting.all
     if params[:query].present?
       # @paintings = Painting.where(location: params[:query])
       sql_query = " \
@@ -17,6 +18,7 @@ class PaintingsController < ApplicationController
 
   def show
     @painting = Painting.find(params[:id])
+    @booking = Booking.new
   end
 
   def new
