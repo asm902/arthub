@@ -1,9 +1,18 @@
 class PaintingsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
   def index
-    @paintings = Painting.all
-
-
+    if params[:query].present?
+      # @paintings = Painting.where(location: params[:query])
+      sql_query = " \
+        paintings.name @@ :query \
+        OR paintings.description @@ :query \
+        OR paintings.artist @@ :query \
+        OR paintings.location @@ :query\
+      "
+      @paintings = Painting.where(sql_query, query: "%#{params[:query]}%")
+    else
+      @paintings = Painting.all
+    end
   end
 
   def show
