@@ -11,11 +11,12 @@
           </div>
           <div class="painting-card-actions">
             <% if booking.confirmed.nil? %>
-              <%= "pending" %>
+              <button type="button" class="btn btn-outline-success" id="confirm"><i class="fas fa-check"></i></button>
+              <button type="button" class="btn btn-outline-danger" id="confirm"><i class="fas fa-times"></i></button>
             <% elsif booking.confirmed %>
-              <%= "confirmed" %>
+              <button type="button" class="btn btn-outline-success disabled">Confirmed</button>
             <% else %>
-              <%= "Declined" %>
+              <button type="button" class="btn btn-outline-danger disabled">Denied</button>
             <% end %>
           </div>
         </div>

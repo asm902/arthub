@@ -1,7 +1,7 @@
 .navbar {
   position: sticky;
   top: 0;
-  z-index: 10000000000;
+  z-index: 50;
 }
 
 .navbar-lewagon {
@@ -34,3 +34,6 @@
   color: #800000;
 }
 
+.navbar .nav-link:hover {
+  background-color: transparent;
+}
