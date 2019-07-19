@@ -19,9 +19,9 @@
         <div class="photo-card">
           <img src="<%=photo.data%>" >
           <div class="photo-card-infos">
-          <%= link_to '<i class="far fa-trash-alt"></i></i>'.html_safe, photo_path(photo),
-                      method: 'delete',
-                      data: {confirm: "Are you sure?"} %>
+          <%= link_to photo_path(photo), method: 'delete', data: {confirm: "Are you sure?"} do %>
+              <button type="button" class="btn btn-outline-danger"><i class="far fa-trash-alt"></i></button>
+          <% end %>
           </div>
         </div>
       <% end %>
