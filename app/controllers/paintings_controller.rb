@@ -31,7 +31,7 @@ class PaintingsController < ApplicationController
     @painting.user = current_user
     # @photo = @painting.photos.build
     if @painting.save!
-      redirect_to root_path
+      redirect_to painting_photos_path(@painting)
     else
       render :new
     end
