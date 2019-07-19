@@ -11,7 +11,7 @@ class BookingsController < ApplicationController
     @booking.total_price = total_price
     @booking.painting = @painting
     if @booking.save!
-      redirect_to painting_path(@painting)
+      redirect_to dashboard_path
     else
       render painting_path(@painting)
     end

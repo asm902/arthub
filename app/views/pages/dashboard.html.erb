@@ -48,14 +48,14 @@
   </div>
   <!-- This is for the user to view their confirmed Bookings -->
   <div class="tab-pane fade" id="pills-confirmed" role="tabpanel" aria-labelledby="pills-contact-tab">
-    <div class="index">
+    <div class="index" id="bookings_confirmed_container">
       <!-- <h3 class="index-title">Confirmed:</h3> -->
-      <%= render "pages/user_confirm", user_bookings_to_confirm: current_user.bookings_by_status(true) %>
+      <%= render("pages/user_confirm", user_bookings_to_confirm: current_user.bookings_by_status(true)) %>
     </div>
   </div>
   <!-- This is for the user to view their denied Bookings-->
   <div class="tab-pane fade" id="pills-denied" role="tabpanel" aria-labelledby="pills-contact-tab">
-    <div class="index">
+    <div class="index" id="bookings_denied_container">
       <!-- <h3 class="index-title">Denied:</h3> -->
       <%= render "pages/user_confirm", user_bookings_to_confirm: current_user.bookings_by_status(false) %>
     </div>

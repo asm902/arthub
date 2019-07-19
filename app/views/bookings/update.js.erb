@@ -3,3 +3,7 @@
 document.querySelector("#booking-<%=@booking.id%>")
   .remove();
 
+$('#bookings_confirmed_container').html("<%= j render(:partial => 'pages/user_confirm', :locals => { :user_bookings_to_confirm => current_user.bookings_by_status(true) }) %>");
+$('#bookings_denied_container').html("<%= j render(:partial => 'pages/user_confirm', :locals => { :user_bookings_to_confirm => current_user.bookings_by_status(false) }) %>");
+
+
