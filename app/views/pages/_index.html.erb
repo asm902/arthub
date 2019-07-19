@@ -3,7 +3,7 @@
   <% user_paintings.each do |painting| %>
   <%#= link_to painting_path(painting) do %>
   <div class="painting-card">
-    <img src="<%=painting.photo%>" >
+    <img src="<%=painting.photos.first.data%>" >
     <div class="painting-card-infos">
       <div>
         <h3><%=painting.name%></h3>

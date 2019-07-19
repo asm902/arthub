@@ -20,7 +20,10 @@ class PhotosController < ApplicationController
   end
 
   def destroy
+    @photo = Photo.find(params[:id])
     @photo.destroy
+    @painting = @photo.painting
+    redirect_to painting_photos_path(@painting)
   end
 
   private

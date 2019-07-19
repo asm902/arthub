@@ -3,7 +3,7 @@
   <% user_bookings_to_confirm.each do |booking| %>
     <%#= link_to painting_path(booking.painting) do %>
       <div class="painting-card" id="booking-<%=booking.id%>">
-        <img src="<%=booking.painting.photo%>" >
+        <img src="<%=booking.painting.photos.first.data%>" >
         <div class="painting-card-infos">
           <div>
             <h3><%=booking.painting.name%></h3>
