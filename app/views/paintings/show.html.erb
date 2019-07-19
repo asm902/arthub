@@ -1,14 +1,14 @@
 <div class="container">
   <div class="index-title d-flex align-items-center">
     <% if current_user == @painting.user %>
-      <h3 ><%= @painting.name%></h3>
+      <h3 id="show-title"><%= @painting.name%></h3>
       <%= link_to '<i class="far fa-trash-alt"></i></i>'.html_safe, painting_path(@painting),
                       method: 'delete',
                       data: {confirm: "Are you sure?"} %>
       <%= link_to '<i class="far fa-edit"></i>'.html_safe, edit_painting_path(@painting)%>
       <%= link_to '<i class="fas fa-camera"></i>'.html_safe, painting_photos_path(@painting)%>
     <% else %>
-      <h3 ><%= @painting.name%></h3>
+      <h3 id="show-title"><%= @painting.name%></h3>
     <% end %>
   </div>
   <p>By <%= @painting.artist%></p>
