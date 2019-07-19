@@ -38,7 +38,6 @@ ActiveRecord::Schema.define(version: 2019_07_19_091837) do
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "photo"
     t.string "artist"
     t.string "location"
     t.integer "height"
