@@ -1,26 +1,35 @@
 <%# raise %>
 <div class="cards">
   <% user_bookings_to_confirm.each do |booking| %>
-    <%= link_to painting_path(booking.painting) do %>
+    <%#= link_to painting_path(booking.painting) do %>
       <div class="painting-card">
         <img src="<%=booking.painting.photo%>" >
         <div class="painting-card-infos">
           <div>
             <h3><%=booking.painting.name%></h3>
-            <p><%=booking.painting.year%></p>
+            <p>Total Price $<%=booking.total_price%></p>
+            <p> Dates: <%=booking.start_date%> to <%= booking.end_date %></p>
           </div>
           <div class="painting-card-actions">
             <% if booking.confirmed.nil? %>
-              <%= "pending" %>
+              <%= link_to painting_path(booking.painting) do %>
+                <button type="button" class="btn btn-outline-warning" id="confirm"><i class="fas fa-info-circle"></i></button>
+              <% end %>
+              <%= link_to painting_booking_path(painting_id: booking.painting, id: booking, confirmed: true), method: :patch do %>
+                <button type="button" class="btn btn-outline-success" id="confirm"><i class="fas fa-check"></i></button>
+              <% end %>
+              <%= link_to painting_booking_path(painting_id: booking.painting, id: booking, confirmed: false), method: :patch do %>
+                <button type="button" class="btn btn-outline-danger" id="confirm"><i class="fas fa-times"></i></button>
+              <% end %>
             <% elsif booking.confirmed %>
-              <%= "confirmed" %>
+              <button type="button" class="btn btn-outline-success disabled">You confirmed</button>
             <% else %>
-              <%= "Declined" %>
+              <button type="button" class="btn btn-outline-danger disabled">You denied</button>
             <% end %>
+            <%# raise %>
           </div>
         </div>
       </div>
     <% end %>
-  <% end %>
 </div>
-<%#= link_to "Confirm booking", painting_booking_path([painting, painting.]) %>
+
