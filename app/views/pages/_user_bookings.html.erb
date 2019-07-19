@@ -8,7 +8,8 @@
             <div class="painting-card-infos">
               <div>
                 <h3><%=booking.painting.name%></h3>
-                <p><%=booking.painting.year%></p>
+                <p>Total Price $<%=booking.total_price%></p>
+                <p><%=booking.start_date%> to <%= booking.end_date %></p>
               </div>
               <div class="painting-card-actions">
                 <% if booking.confirmed.nil? %>
@@ -25,4 +26,4 @@
       <% end %>
     </div>
 <% end %>
-<%#= link_to "Confirm booking", painting_booking_path([painting, painting.]) %>
+
