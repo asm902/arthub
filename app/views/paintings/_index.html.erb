@@ -8,7 +8,8 @@
     <% @paintings.each do |painting| %>
       <%= link_to painting_path(painting) do %>
         <div class="painting-card">
-          <img src="<%=painting.photo%>" >
+          <%= cl_image_tag painting.photos.first.data %>
+          <!-- <img src="<%#=painting.photos.first%>" > -->
           <div class="painting-card-infos">
             <div>
               <h3><%=painting.name%></h3>
