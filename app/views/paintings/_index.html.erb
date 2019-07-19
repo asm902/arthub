@@ -1,8 +1,8 @@
 <% if @paintings.length != 0 %>
   <% if params[:query].present? %>
-    <h3 class="index-title">Your Search Results for: <%= params[:query] %></h3>
+    <h1 class="index-title">Your Search Results for: <%= params[:query] %></h1>
   <% else %>
-    <h3 class="index-title">Explore our paintings:</h3>
+    <h1 class="index-title">Explore our paintings:</h1>
   <% end %>
   <div class="cards">
     <% @paintings.each do |painting| %>

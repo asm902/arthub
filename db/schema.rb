@@ -72,5 +72,4 @@ ActiveRecord::Schema.define(version: 2019_07_19_091837) do
   add_foreign_key "bookings", "paintings"
   add_foreign_key "bookings", "users"
   add_foreign_key "paintings", "users"
-  add_foreign_key "photos", "paintings"
 end
