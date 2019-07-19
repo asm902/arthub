@@ -6,6 +6,7 @@
                       method: 'delete',
                       data: {confirm: "Are you sure?"} %>
       <%= link_to '<i class="far fa-edit"></i>'.html_safe, edit_painting_path(@painting)%>
+      <%= link_to '<i class="fas fa-camera"></i>'.html_safe, painting_photos_path(@painting)%>
     <% else %>
       <h3 ><%= @painting.name%></h3>
     <% end %>
@@ -15,7 +16,11 @@
   <div class=" show-container row justify-content-around">
 
     <div class="image-container col-sm-12 col-lg-6">
-        <%= cl_image_tag @painting.photo, crop: :limit%>
+        <%= render 'photo_carrousel', photos: @photos%>
+        <%#= cl_image_tag @painting.photo, crop: :limit%>
+        <%# @photos.each do |photo| %>
+        <%#= cl_image_tag photo.data, crop: :limit %>
+        <%# end %>
     </div>
 
     <div class=" show-card col-sm-12 col-lg-6">
