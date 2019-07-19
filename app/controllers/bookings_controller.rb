@@ -30,6 +30,11 @@ class BookingsController < ApplicationController
     # render "dashboard"
   end
 
+  def destroy
+    @booking = Booking.find(params[:id])
+    @booking.destroy
+  end
+
   private
 
   def booking_params
