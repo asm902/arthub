@@ -25,3 +25,23 @@
     border-color: #800080;
   }
 }
+
+.btn-outline-success#ugh-oh-buttons {
+    background-color: transparent;
+    color: #ffffff;
+    border-color: #ffffff;
+    width: 150px;
+    margin-right: 16px;
+
+
+  &:hover {
+    background-color: #800080;
+    color: #ffffff;
+    border-color: #800080;
+  }
+}
+
+.ugh-oh-buttons-div {
+  display: flex;
+  justify-content: left;
+}

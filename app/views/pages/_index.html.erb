@@ -10,10 +10,18 @@
         <p><%=painting.year%></p>
       </div>
       <div class="painting-card-actions">
-        <%= link_to painting_path(painting), method: :delete, data: {confirm: "Are you sure?"} do %>
+        <%= link_to painting_path(painting) do %>
           <button type="button" class="btn btn-outline-warning" id="confirm"><i class="fas fa-info-circle"></i></button>
         <% end %>
-        <button type="button" class="btn btn-outline-danger" id="confirm"><i class="far fa-trash-alt"></i></button>
+        <%= link_to painting_photos_path(painting) do %>
+          <button type="button" class="btn btn-outline-info" id="confirm"><i class="fas fa-camera"></i></button>
+        <% end %>
+        <%= link_to edit_painting_path(painting) do %>
+          <button type="button" class="btn btn-outline-dark" id="confirm"><i class="far fa-edit"></i></button>
+        <% end %>
+        <%= link_to painting_path(painting), method: :delete, data: {confirm: "Are you sure?"} do %>
+          <button type="button" class="btn btn-outline-danger" id="confirm"><i class="far fa-trash-alt"></i></button>
+        <% end %>
       </div>
     </div>
   </div>
