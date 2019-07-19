@@ -1,6 +1,7 @@
 class PhotosController < ApplicationController
   def index
     @painting = Painting.find(params[:painting_id])
+    @photo = Photo.new
     @photos = @painting.photos.all
   end
 
@@ -10,18 +11,17 @@ class PhotosController < ApplicationController
   def create
     @painting = Painting.find(params[:painting_id])
     @photo = Photo.new(photo_params)
-    if @photo.save
-      redirect to painting_path(@painting)
+    @photo.painting = @painting
+    if @photo.save!
+      redirect_to painting_photos_path(@painting)
     else
-      render :new
+      render :index
     end
   end
 
   def destroy
-    @photo = Photo.find(params[:id])
     @photo.destroy
   end
-
 
   private
 

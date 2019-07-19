@@ -1,0 +1,42 @@
+<div class="container">
+  <h3 class="added-photos">Add as many photos as you want to your painting:</h3>
+  <div class="new-photo d-flex justify-content-between align-items-end">
+    <div class="add-photo-form">
+    <%=  simple_form_for [@painting, @photo] do |f|%>
+      <%= f.input :data, label: false %>
+      <%= f.input :data_cache, as: :hidden  %>
+      <%= f.submit 'Add another photo', id: "btn-new-photo"%>
+    <% end %>
+    </div>
+    <div >
+      <%= link_to "Go to painting", painting_path(@painting), class: "btn-new-photo" %>
+    </div>
+  </div>
+
+  <h3 class="added-photos">Your added photos:</h3>
+  <div class="cards">
+      <% @photos.each do |photo| %>
+        <div class="photo-card">
+          <img src="<%=photo.data%>" >
+          <div class="photo-card-infos">
+          <%= link_to '<i class="far fa-trash-alt"></i></i>'.html_safe, photo_path(photo),
+                      method: 'delete',
+                      data: {confirm: "Are you sure?"} %>
+          </div>
+        </div>
+      <% end %>
+
+    </div>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
