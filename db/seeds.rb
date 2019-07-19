@@ -123,6 +123,8 @@ painting7.save!
 puts "Painting 7 - Freshapple - Seeded ✅"
 puts "Paintings/Artwork - Seeded ✅"
 
+
+
 puts "Creating Bookings"
 booking1 = Booking.new(
   user: user3,
