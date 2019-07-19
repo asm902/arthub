@@ -46,14 +46,6 @@ ActiveRecord::Schema.define(version: 2019_07_18_225157) do
     t.index ["user_id"], name: "index_paintings_on_user_id"
   end
 
-  create_table "photos", force: :cascade do |t|
-    t.bigint "painting_id"
-    t.string "url"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["painting_id"], name: "index_photos_on_painting_id"
-  end
-
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -73,5 +65,4 @@ ActiveRecord::Schema.define(version: 2019_07_18_225157) do
   add_foreign_key "bookings", "paintings"
   add_foreign_key "bookings", "users"
   add_foreign_key "paintings", "users"
-  add_foreign_key "photos", "paintings"
 end

@@ -59,3 +59,15 @@
 .painting-card-actions #confirm {
   width: 50px;
 }
+
+.btn-outline-warning {
+    background-color: transparent;
+    color: #800080;
+    border-color: #800080;
+
+  &:hover {
+    background-color: #800080;
+    color: #ffffff;
+    border-color: #800080;
+  }
+}

@@ -1,4 +1,4 @@
-  class BookingsController < ApplicationController
+class BookingsController < ApplicationController
   def new
   end
 
@@ -19,6 +19,14 @@
 
   def confirm
     @booking = Booking.find(params[:id])
+  end
+
+  def update
+    booking = Booking.find(params[:id])
+    params[:confirmed] == "true" ? booking.confirmed = true : booking.confirmed = false
+    booking.save
+    # raise
+    # render "dashboard"
   end
 
   private
