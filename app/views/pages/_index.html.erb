@@ -1,23 +1,20 @@
 <%# raise %>
-<% if  %>
-  <div class="cards">
-      <% user_paintings.each do |painting| %>
-        <%= link_to painting_path(painting) do %>
-          <div class="painting-card">
-            <img src="<%=painting.photo%>" >
-            <div class="painting-card-infos">
-              <div>
-                <h3><%=painting.name%></h3>
-                <p><%=painting.year%></p>
-              </div>
-              <div class="painting-card-actions">
-                <%# if painting.confirmed %>
-                <%#= link_to "Confirm booking", painting_booking_path([painting, painting.]) %>
-                <%# end %>
-              </div>
-            </div>
-          </div>
-        <% end %>
-      <% end %>
+<div class="cards">
+  <% user_paintings.each do |painting| %>
+  <%= link_to painting_path(painting) do %>
+  <div class="painting-card">
+    <img src="<%=painting.photo%>" >
+    <div class="painting-card-infos">
+      <div>
+        <h3><%=painting.name%></h3>
+        <p><%=painting.year%></p>
+      </div>
+      <div class="painting-card-actions">
+        <button type="button" class="btn btn-outline-success" id="confirm"><i class="far fa-edit"></i></button>
+        <button type="button" class="btn btn-outline-danger" id="confirm"><i class="far fa-trash-alt"></i></button>
+      </div>
     </div>
-<% end %>
+  </div>
+  <% end %>
+  <% end %>
+</div>

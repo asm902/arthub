@@ -1,39 +1,72 @@
-<% date = DateTime.new %>
+<% date = Time.new %>
 <div class="dashboardbanner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1557682250-33bd709cbe85?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2215&q=80;">
   <div class="container">
     <h1><%= current_user.first_name %>'s Dashboard</h1>
-    <p>Hey there, happy <%= date.strftime(format="%A") %>!</p>
-
-    <!-- <form action="<%= paintings_path %>" method="get" class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="  Search" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Discover</button>
-    </form> -->
+    <p>Hey there, happy <%= date.strftime("%A") %>!</p>
   </div>
-</div>
-<%# raise %>
-<div class="index">
-  <h3 class="index-title">Your Paintings:</h3>
-  <%= render "pages/index", user_paintings: current_user.owned_paintings %>
+  <!-- This is the dashboard pill navbar -->
+  <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+    <!-- Bookings -->
+    <li class="nav-item">
+      <a class="nav-link active" id="pills-bookings-tab" data-toggle="pill" href="#pills-bookings" role="tab" aria-controls="pills-bookings" aria-selected="true">Your Bookings</a>
+    </li>
+    <!-- User to confirm -->
+    <li class="nav-item">
+      <a class="nav-link" id="pills-confirm?-tab" data-toggle="pill" href="#pills-toconfirm" role="tab" aria-controls="pills-toconfirm" aria-selected="false">To Confirm</a>
+    </li>
+    <!-- User to view confirmed bookings for others -->
+    <li class="nav-item">
+      <a class="nav-link" id="pills-confirmed-tab" data-toggle="pill" href="#pills-confirmed" role="tab" aria-controls="pills-confirmed" aria-selected="false">Confirmed</a>
+    </li>
+    <!-- User to view their denied bookings for others -->
+    <li class="nav-item">
+      <a class="nav-link" id="pills-denied-tab" data-toggle="pill" href="#pills-denied" role="tab" aria-controls="pills-denied" aria-selected="false">Denied</a>
+    </li>
+    <!-- User to view their owned paintings -->
+    <li class="nav-item">
+      <a class="nav-link" id="pills-ownedpaintings-tab" data-toggle="pill" href="#pills-ownedpaintings" role="tab" aria-controls="pills-ownedpaintings" aria-selected="false">Your Paintings</a>
+    </li>
+  </ul>
+
 </div>
 
-<div class="index">
-  <h3 class="index-title">Your Bookings:</h3>
-  <%= render "pages/user_bookings", user_bookings: current_user.bookings %>
-</div>
-
-<div class="index">
-  <h3 class="index-title">To Confirm:</h3>
-  <%= render "pages/user_confirm", user_bookings_to_confirm: current_user.bookings_by_status(nil) %>
-</div>
-
-<div class="index">
-  <h3 class="index-title">Confirmed:</h3>
-  <%= render "pages/user_confirm", user_bookings_to_confirm: current_user.bookings_by_status(true) %>
-</div>
-
-<div class="index">
-  <h3 class="index-title">Denied:</h3>
-  <%= render "pages/user_confirm", user_bookings_to_confirm: current_user.bookings_by_status(false) %>
+<!-- These are the divs to be rendered on pill selection -->
+<div class="tab-content" id="pills-tabContent">
+  <!-- This is for Bookings with status -->
+  <div class="tab-pane fade show active" id="pills-bookings" role="tabpanel" aria-labelledby="pills-home-tab">
+    <div class="index">
+      <!-- <h3 class="index-title">Your Bookings:</h3> -->
+      <%= render "pages/user_bookings", user_bookings: current_user.bookings %>
+    </div>
+  </div>
+  <!-- This is for the user to confirm -->
+  <div class="tab-pane fade" id="pills-toconfirm" role="tabpanel" aria-labelledby="pills-profile-tab">
+    <div class="index">
+      <!-- <h3 class="index-title">To Confirm:</h3> -->
+      <%= render "pages/user_confirm", user_bookings_to_confirm: current_user.bookings_by_status(nil) %>
+    </div>
+  </div>
+  <!-- This is for the user to view their confirmed Bookings -->
+  <div class="tab-pane fade" id="pills-confirmed" role="tabpanel" aria-labelledby="pills-contact-tab">
+    <div class="index">
+      <!-- <h3 class="index-title">Confirmed:</h3> -->
+      <%= render "pages/user_confirm", user_bookings_to_confirm: current_user.bookings_by_status(true) %>
+    </div>
+  </div>
+  <!-- This is for the user to view their denied Bookings-->
+  <div class="tab-pane fade" id="pills-denied" role="tabpanel" aria-labelledby="pills-contact-tab">
+    <div class="index">
+      <!-- <h3 class="index-title">Denied:</h3> -->
+      <%= render "pages/user_confirm", user_bookings_to_confirm: current_user.bookings_by_status(false) %>
+    </div>
+  </div>
+  <!-- This is for the user to view their owned paintings-->
+  <div class="tab-pane fade" id="pills-ownedpaintings" role="tabpanel" aria-labelledby="pills-contact-tab">
+    <div class="index">
+      <!-- <h3 class="index-title">Your Paintings:</h3> -->
+      <%= render "pages/index", user_paintings: current_user.owned_paintings %>
+    </div>
+  </div>
 </div>
 
 <%# raise %>
