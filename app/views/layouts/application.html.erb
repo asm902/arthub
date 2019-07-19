@@ -15,8 +15,11 @@
     <%= render "pages/navbar" %>
     <div style="min-height: calc(100vh - 164px)">
       <%= yield %>
-      <p class="notice"><%= notice %></p>
-      <p class="alert"><%= alert %></p>
+      <% if notice %>
+        <span class="notice"><%= notice %></span>
+      <% elsif alert %>
+        <span class="alert"><%= alert %></span>
+      <% end %>
     </div>
     <%= render "pages/footer" %>
     <%= javascript_include_tag 'application' %>
