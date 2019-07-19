@@ -19,6 +19,7 @@ class PaintingsController < ApplicationController
   def show
     @painting = Painting.find(params[:id])
     @booking = Booking.new
+    @photos = @painting.photos.all
   end
 
   def new
@@ -28,6 +29,7 @@ class PaintingsController < ApplicationController
   def create
     @painting = Painting.new(painting_params)
     @painting.user = current_user
+    # @photo = @painting.photos.build
     if @painting.save!
       redirect_to root_path
     else
