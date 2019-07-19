@@ -38,6 +38,7 @@ ActiveRecord::Schema.define(version: 2019_07_19_091837) do
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "photo"
     t.string "artist"
     t.string "location"
     t.integer "height"
@@ -72,4 +73,5 @@ ActiveRecord::Schema.define(version: 2019_07_19_091837) do
   add_foreign_key "bookings", "paintings"
   add_foreign_key "bookings", "users"
   add_foreign_key "paintings", "users"
+  add_foreign_key "photos", "paintings"
 end

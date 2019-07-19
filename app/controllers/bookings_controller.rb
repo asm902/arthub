@@ -22,9 +22,10 @@ class BookingsController < ApplicationController
   end
 
   def update
-    booking = Booking.find(params[:id])
-    params[:confirmed] == "true" ? booking.confirmed = true : booking.confirmed = false
-    booking.save
+    # byebug
+    @booking = Booking.find(params[:id])
+    params[:confirmed] == "true" ? @booking.confirmed = true : @booking.confirmed = false
+    @booking.save
     # raise
     # render "dashboard"
   end
